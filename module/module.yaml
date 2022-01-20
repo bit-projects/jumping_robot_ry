@@ -26,25 +26,25 @@ stance:
 # Change the default attitude
 default_attitude: [1, 0, 0, 0, 0, 0, 1.119]
 
-convexHulls:
-  ankle_left: [ankle_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/ankle_left-ch.txt"]
-  ankle_right: [ankle_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/ankle_right-ch.txt"]
-  arm_left: [arm_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/arm_left-ch.txt"]
-  arm_right: [arm_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/arm_right-ch.txt"]
-  calf_left: [calf_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/calf_left-ch.txt"]
-  calf_right: [calf_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/calf_right-ch.txt"]
-  foot_left: [foot_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/foot_left-ch.txt"]
-  foot_right: [foot_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/foot_right-ch.txt"]
-  hip_left: [hip_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/hip_left-ch.txt"]
-  hip_right: [hip_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/hip_right-ch.txt"]
-  thigh_left: [thigh_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/thigh_left-ch.txt"]
-  thigh_right: [thigh_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/thigh_right-ch.txt"]
-  trunk: [trunk, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/trunk-ch.txt"]
-# Default setting for the collision parameters
-default-col: &default-col
-  iDist: 0.02
-  sDist: 0.005
-  damping: 0
+#convexHulls:
+#  ankle_left: [ankle_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/ankle_left-ch.txt"]
+#  ankle_right: [ankle_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/ankle_right-ch.txt"]
+#  arm_left: [arm_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/arm_left-ch.txt"]
+#  arm_right: [arm_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/arm_right-ch.txt"]
+#  calf_left: [calf_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/calf_left-ch.txt"]
+#  calf_right: [calf_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/calf_right-ch.txt"]
+#  foot_left: [foot_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/foot_left-ch.txt"]
+#  foot_right: [foot_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/foot_right-ch.txt"]
+#  hip_left: [hip_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/hip_left-ch.txt"]
+#  hip_right: [hip_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/hip_right-ch.txt"]
+#  thigh_left: [thigh_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/thigh_left-ch.txt"]
+#  thigh_right: [thigh_right, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/thigh_right-ch.txt"]
+#  trunk: [trunk, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/trunk-ch.txt"]
+## Default setting for the collision parameters
+#default-col: &default-col
+#  iDist: 0.02
+#  sDist: 0.005
+#  damping: 0
 #minimalSelfCollisions:
 #  # Arm <-> Body collision
 #
