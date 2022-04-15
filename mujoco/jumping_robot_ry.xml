@@ -15,10 +15,10 @@
 
         <default class="L_foot">
           <!-- For the box, size is width/length/height pos offset is applied to match the visual shape -->
-          <geom pos="0.063 0.0 0.033" quat="1 0 0 0" type="box" rgba="1.898039 0.917647 0.929412 1" size="0.014 0.0535 0.122" condim="6"/>
+          <geom pos="0.063 0.0 0.033" quat="1 0 0 0.0" type="box" rgba="1.898039 0.917647 0.929412 1" size="0.014 0.0535 0.122" condim="6"/>
         </default>
         <default class="R_foot">
-          <geom pos="0.063 0.0 0.033" quat="1 0 0 0" type="box" rgba="1.898039 0.917647 0.929412 1" size="0.014 0.0535 0.122" condim="6"/>
+          <geom pos="0.063 0.0 0.033" quat="1 0 0 0.0" type="box" rgba="1.898039 0.917647 0.929412 1" size="0.014 0.0535 0.122" condim="6"/>
         </default>
     </default>
 
@@ -214,91 +214,91 @@
     <worldbody>
         <geom name="floor" pos="0 0 0" size="0 0 .25" type="plane" material="matplane" condim="3"/>
         <light directional="false" diffuse="0.2 0.2 0.2" specular="0 0 0" pos="0 0 2" dir="0 0 -1" castshadow="false"/>
-        <body name="trunk" pos="0 0 1.18"  quat="1 0 0 0">
-          <freejoint name="root" />
-          <inertial pos="-0.00534187421003305 0.00675403772049716 0.11861929306466" quat="1 0 0 0" mass="20.9913292790793" diaginertia="0.148687583146669 0.0853076437183973 0.167987780612291" />
-        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.429412 1" mesh="trunk" />
-        <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="trunk" />
-        <!-- site for root imu sensor -->
-        <site name="imu"  size="0.01" pos="0 0 0" />
-        <body name="arm_left" pos="-0.0101075 0.257796 0.16535" quat="-0.499082 -0.499082 -0.500917 0.500917">
-            <inertial pos="0.171299 0.000442711 0.00603783" quat="-0.0124992 0.724064 0.0105136 0.68954" mass="1.52222" diaginertia="0.0042311 0.00356134 0.00234094" />
-            <joint name="shoulder_left" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" armature="0.19" />
-            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="arm_left" />
-            <geom type="mesh" rgba="1 1 1 1" mesh="arm_left" />
-        </body>
-        <body name="arm_right" pos="-0.0101075 -0.257199 0.16535" quat="-0.499082 -0.499082 -0.500917 0.500917">
-            <inertial pos="0.170556 0.000375216 -0.00633364" quat="-0.00946963 0.689655 0.0130614 0.723959" mass="1.529" diaginertia="0.00422735 0.0035606 0.00233693" />
-            <joint name="shoulder_right" pos="0 0 0" axis="0 0 -1" limited="true" range="-3.14 3.14" armature="0.19"/>
-            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="arm_right" />
-            <geom type="mesh" rgba="1 1 1 1" mesh="arm_right" />
-        </body>
-        <body name="hip_left" pos="-0.000306224 0.105707 -0.214" quat="0.705207 -0.000783573 0.709001 -0.000787789">
-            <inertial pos="0.000264789 0.00227805 -0.0517419" quat="0.472335 0.524937 0.470923 0.528746" mass="2.77226" diaginertia="0.00278881 0.00265247 0.00230494" />
-            <joint name="hip_left_x" pos="0 0 0" axis="0.00536591 0 -0.999986" limited="true" range="-6.14 6.14" armature="0.19"/>
-            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.398039 0.417647 0.929412 1" mesh="hip_left" />
-            <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="hip_left" />
-            <body name="thigh_left" pos="0 0 0" quat="0.707111 0.707103 0 0">
-                <inertial pos="0.204288 0.0124777 0.000500837" quat="0.495119 0.49758 0.503846 0.503398" mass="2.24457" diaginertia="0.0213139 0.0200096 0.0044171" />
-                <joint name="hip_left_y" pos="0 0 0" axis="0.00222222 0 0.999998" limited="true" range="-6.14 6.14" armature="0.19"/>
-                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.598039 0.517647 0.529412 1" mesh="thigh_left" />
-                <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="thigh_left" />
-                <body name="calf_left" pos="0.450001 0 0" quat="0.999999 -6.36961e-07 0.00111111 0.000573266">
-                    <inertial pos="0.181033 0.00565154 -0.000982462" quat="0.500362 0.501169 0.498977 0.499489" mass="1.75715" diaginertia="0.0176436 0.0171561 0.0024401" />
-                    <joint name="knee_left" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" armature="0.19"/>
-                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.618039 0.217647 0.129412 1" mesh="calf_left" />
-                    <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="calf_left" />
-                    <body name="ankle_left" pos="0.45 0 0" quat="1 0 0 -1.22758e-05">
-                        <inertial pos="-0.000291441 -0.0684593 -0.000437809" quat="0.706725 0.70634 0.0237039 -0.0326017" mass="0.426455" diaginertia="0.000255127 0.000252458 0.000154838" />
-                        <joint name="ankle_left_y" pos="0 0 0" axis="0 0 -1" limited="true" range="-3.14 3.14" armature="0.19"/>
-                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.398039 0.417647 0.929412 1" mesh="ankle_left" />
-                        <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="ankle_left" />
-                        <body name="foot_left" pos="0 0 0" quat="0.707078 -0.707078 0.00640254 0.00640254">
-                            <inertial pos="0.0590532 -0.000380317 0.0199412" quat="0.999951 0.0074717 -0.00604751 -0.00244807" mass="1.17882" diaginertia="0.00491893 0.00417531 0.000946563" />
-                            <joint name="ankle_left_x" pos="0 0 0" axis="0 0 -1" limited="true" range="-3.14 3.14" armature="0.19"/>
-                            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="foot_left" />
-                            <geom class="L_foot" />
-                            <!--geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="foot_left" /-->
-                            <!-- Site for sensor -->
-                            <site name="LeftFootForceSensor_force"  size="0.01" pos="0.05 0.0 0" quat="0.707107 0.707107 0 0"/>
+        <body name="trunk" pos="0 0 1.20"  quat="1 0 0 0">
+            <freejoint name="root" />
+            <inertial pos="-0.00253099 -0.00595369 0.0890416" quat="0.632172 0.631039 -0.318172 0.317671" mass="8.19194" diaginertia="0.075097 0.0741117 0.0370616" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="trunk" />
+            <geom type="mesh" rgba="1 1 1 1" mesh="trunk" />
+            <!-- site for root imu sensor -->
+            <site name="imu"  size="0.01" pos="0 0 0" />
+            <body name="arm_left" pos="0.0022528 0.253 0.16485" quat="-0.5 -0.5 -0.5 0.5">
+                <inertial pos="0.1713 0.00044271 0.0060378" quat="-0.012499 0.724063 0.0105136 0.68954" mass="3.5005" diaginertia="0.00971374 0.00817607 0.00537429" />
+                <joint name="shoulder_left" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28 6.28" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.79216 0.81961 0.93333 1" mesh="arm_left" />
+                <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="arm_left" />
+            </body>
+            <body name="arm_right" pos="0.0022528 -0.26199 0.16485" quat="-0.5 -0.5 -0.5 0.5">
+                <inertial pos="0.17056 0.00037521 -0.0063336" quat="-0.00946983 0.689655 0.0130611 0.723958" mass="3.5005" diaginertia="0.0096781 0.00815164 0.00535017" />
+                <joint name="shoulder_right" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28 6.28" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.79216 0.81961 0.93333 1" mesh="arm_right" />
+                <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="arm_right" />
+            </body>
+            <body name="hip_left" pos="-0.010946 0.083004 -0.223" quat="0.707107 0 0.707107 0">
+                <inertial pos="-7.7946e-06 0.0022781 -0.051743" quat="0.471651 0.526882 0.471599 0.526816" mass="2.7723" diaginertia="0.00278876 0.00265244 0.0023049" />
+                <!--joint name="hip_left_x" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28 6.28" /-->
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="hip_left" />
+                <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="hip_left" />
+                <body name="thigh_left" pos="0 0 0" quat="0.707107 0.707107 0 0">
+                    <inertial pos="0.20429 0.012478 0.00050084" quat="0.495119 0.497581 0.503846 0.503399" mass="4" diaginertia="0.0213136 0.0200101 0.00441709" />
+                    <joint name="hip_left_y" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28 6.28" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="thigh_left" />
+                    <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="thigh_left" />
+                    <body name="calf_left" pos="0.45 0 0">
+                        <inertial pos="0.18103 0.0056515 -0.00098246" quat="0.500362 0.50117 0.498977 0.499489" mass="3.3" diaginertia="0.0176431 0.017156 0.00244006" />
+                        <joint name="knee_left" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28 6.28" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="calf_left" />
+                        <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="calf_left" />
+                        <body name="ankle_left" pos="0.45 0 0">
+                            <inertial pos="-0.00029144 -0.068459 -0.00043781" quat="0.70711 0.707103 0.000239519 -0.000328307" mass="0.42645" diaginertia="0.025509 0.025247 0.015485" />
+                            <joint name="ankle_left_y" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28 6.28" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="ankle_left" />
+                            <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="ankle_left" />
+                            <body name="foot_left" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+                                <inertial pos="0.062654 -0.0002383 0.024028" quat="1 0.000421042 -0.000433514 -0.00022896" mass="1.5652" diaginertia="0.075368 0.064232 0.0133849" />
+                                <joint name="ankle_left_x" pos="0 0 0" axis="0 0 -1" limited="true" range="-6.28 6.28" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="foot_left" />
+		                <geom class="L_foot" />
+                                <!--geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="foot_left" /-->
+                                <!-- Site for sensor -->
+                                <site name="LeftFootForceSensor_force"  size="0.01" pos="0.05 0.0 0" quat="0.707107 0 -0.707107 0"/>
+                            </body>
                         </body>
                     </body>
                 </body>
             </body>
-        </body>
-        <body name="hip_right" pos="-0.000306224 -0.0872017 -0.214" quat="0.707107 0 0.707107 0">
-            <inertial pos="-3.77764e-06 -0.00227882 -0.0517486" quat="0.526882 0.471519 0.52689 0.471647" mass="2.77194" diaginertia="0.00278878 0.00265241 0.00230482" />
-            <joint name="hip_right_x" pos="0 0 0" axis="0 0 -1" limited="true" range="-6.14 6.14" armature="0.19"/>
-            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.398039 0.417647 0.929412 1" mesh="hip_right" />
-            <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="hip_right" />
-            <body name="thigh_right" pos="0 0 0" quat="0.707102 0.707106 0.00268282 -0.00111148">
-                <inertial pos="0.204157 0.0124833 -0.000565342" quat="0.497084 0.495748 0.503148 0.503967" mass="2.24426" diaginertia="0.0213396 0.020035 0.00441791" />
-                <joint name="hip_right_y" pos="0 0 0" axis="0.00222222 0 -0.999998" limited="true" range="-6.14 6.14" armature="0.19"/>
-                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.598039 0.517647 0.529412 1" mesh="thigh_right" />
-                <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="thigh_right" />
-                <body name="calf_right" pos="0.450001 0 0" quat="0.999999 -6.00354e-07 -0.00111111 -0.00054032">
-                    <inertial pos="0.182608 0.00618307 0.000139879" quat="0.500766 0.499656 0.500276 0.4993" mass="1.77439" diaginertia="0.0176413 0.0171504 0.00243747" />
-                    <joint name="knee_right" pos="0 0 0" axis="0 0 -1" limited="true" range="-3.14 3.14" armature="0.19"/>
-                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.618039 0.217647 0.129412 1" mesh="calf_right" />
-                    <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="calf_right" />
-                    <body name="ankle_right" pos="0.449001 0 0" quat="0.999999 0 0 0.00110131">
-                        <inertial pos="-0.000291429 -0.0684594 0.000437808" quat="0.70634 0.706725 -0.0325878 0.023689" mass="0.426454" diaginertia="0.000255126 0.000252457 0.000154838" />
-                        <joint name="ankle_right_y" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" armature="0.19"/>
-                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.398039 0.417647 0.929412 1" mesh="ankle_right" />
-                        <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="ankle_right" />
-                        <body name="foot_right" pos="0 0 0" quat="0.707061 -0.707061 -0.00807924 -0.00807924">
-                            <inertial pos="0.059055 0.000380265 0.0199341" quat="0.999951 -0.00747209 -0.00604181 0.0024602" mass="1.17888" diaginertia="0.00491892 0.00417527 0.000946571" />
-                            <joint name="ankle_right_x" pos="0 0 0" axis="0 0 -1" limited="true" range="-3.14 3.14" armature="0.19"/>
-                            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="foot_right" />
-                            <geom class="R_foot" />
-                            <!--geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="foot_right" /-->
-                            <!-- Site for sensor -->
-                            <site name="RightFootForceSensor_force"  size="0.01" pos="0.05 0.0 0"  quat="0.707107 0.707107 0 0"/>
+            <body name="hip_right" pos="-0.010946 -0.091996 -0.223" quat="0.707107 0 0.707107 0">
+                <inertial pos="-3.7776e-06 -0.0022788 -0.051749" quat="0.52689 0.47151 0.526898 0.471638" mass="2.7723" diaginertia="0.00278876 0.00265244 0.0023048" />
+                <!--joint name="hip_right_x" pos="0 0 0" axis="0 0 -1" limited="true" range="-60.28 60.28" /-->
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="hip_right" />
+                <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="hip_right" />
+                <body name="thigh_right" pos="0 0 0" quat="0.707107 0.707107 0 0">
+                    <inertial pos="0.20416 0.012482 -0.00056398" quat="0.497064 0.495758 0.503172 0.503955" mass="4" diaginertia="0.0213405 0.0200361 0.00441797" />
+                    <joint name="hip_right_y" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28 6.28" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="thigh_right" />
+                    <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="thigh_right" />
+                    <body name="calf_right" pos="0.45 0 0">
+                        <inertial pos="0.18261 0.0061831 0.00013988" quat="0.500766 0.499657 0.500276 0.4993" mass="3.3" diaginertia="0.017641 0.01715 0.00243749" />
+                        <joint name="knee_right" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28 6.28" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="calf_right" />
+                        <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="calf_right" />
+                        <body name="ankle_right" pos="0.449 0 0">
+                            <inertial pos="-0.00029143 -0.068459 0.00043781" quat="0.707103 0.70711 -0.000328162 0.000239367" mass="0.42645" diaginertia="0.025509 0.025247 0.015485" />
+                            <joint name="ankle_right_y" pos="0 0 0" axis="0 0 1" limited="true" range="-6.28 6.28" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="ankle_right" />
+                            <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="ankle_right" />
+                            <body name="foot_right" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+                                <inertial pos="0.063453 0.00022448 0.02494" quat="1 -0.00041991 -0.00044357 0.000236793" mass="1.5652" diaginertia="0.0753681 0.064232 0.0133849" />
+                                <joint name="ankle_right_x" pos="0 0 0" axis="0 0 -1" limited="true" range="-6.28 6.28" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.89804 0.91765 0.92941 1" mesh="foot_right" />
+		                <geom class="R_foot" />
+                                <!--geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="foot_right" /-->
+                                <!-- Site for sensor -->
+                                <site name="RightFootForceSensor_force"  size="0.01" pos="0.05 0.0 0"  quat="0.707107 0 -0.707107 0"/>
+                            </body>
                         </body>
                     </body>
                 </body>
             </body>
-        </body>
         </body>
     </worldbody>
 
@@ -306,12 +306,12 @@
       <motor name="shoulder_left" joint="shoulder_left" />
       <motor name="shoulder_right" joint="shoulder_right" />
       <motor name="knee_left" joint="knee_left" />
-      <motor name="hip_left_x" joint="hip_left_x" />
+      <!--motor name="hip_left_x" joint="hip_left_x" /-->
       <motor name="hip_left_y" joint="hip_left_y" />
       <motor name="ankle_left_y" joint="ankle_left_y" />
       <motor name="ankle_left_x" joint="ankle_left_x" />
       <motor name="knee_right" joint="knee_right" />
-      <motor name="hip_right_x" joint="hip_right_x" />
+      <!--motor name="hip_right_x" joint="hip_right_x" /-->
       <motor name="hip_right_y" joint="hip_right_y" />
       <motor name="ankle_right_y" joint="ankle_right_y" />
       <motor name="ankle_right_x" joint="ankle_right_x" />

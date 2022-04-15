@@ -10,12 +10,12 @@ urdf_path: "@CMAKE_CURRENT_SOURCE_DIR@/urdf/jumping_robot_ry.urdf"
 fixed: false
 # Change the default configuration
 stance:
-  hip_right_y: [-0.4]
-  knee_right: [0.8]
-  ankle_right_y: [0.4]
-  hip_left_y: [0.4]
-  knee_left: [-0.8]
-  ankle_left_y: [-0.4]
+  hip_right_y: [0.8]
+  knee_right: [-1.6]
+  ankle_right_y: [0.8]
+  hip_left_y: [0.8]
+  knee_left: [-1.6]
+  ankle_left_y: [0.8]
 #stance:
 #  hip_right_y: [-0.]
 #  knee_right: [0.]
@@ -24,7 +24,8 @@ stance:
 #  knee_left: [-0.]
 #  ankle_left_y: [-0.]
 # Change the default attitude
-default_attitude: [1, 0, 0, 0, 0, 0, 1.119]
+default_attitude: [1, 0, 0, 0, 0, 0, 0.927]
+#default_attitude: [1, 0, 0, 0, 0, 0, 1.127]
 
 #convexHulls:
 #  ankle_left: [ankle_left, "@CMAKE_CURRENT_SOURCE_DIR@/convex/jumping_robot_ry/ankle_left-ch.txt"]
@@ -111,15 +112,15 @@ forceSensors:
   - name: RightFootForceSensor
     parentBody: foot_right
     X_p_f:
-      rotation: [0, -1.5707, 0]
+      rotation: [0, -1.5707963267949, 0]
       translation: [0, 0, 0]
   - name: LeftFootForceSensor
     parentBody: foot_left
     X_p_f:
-      rotation: [0, -1.5707, 0]
+      rotation: [0, -1.5707963267949, 0]
       translation: [0, 0, 0]
 
-#lipmStabilizer:
-#  leftFootSurface: LeftFoot
-#  rightFootSurface: RightFoot
-#  torsoBodyName: trunk
+lipmStabilizer:
+  leftFootSurface: LeftFoot
+  rightFootSurface: RightFoot
+  torsoBodyName: trunk
